@@ -1,0 +1,44 @@
+onLoadIntroTime = false;
+onLoadMissionTime = false;
+OnLoadMission = $STR_CELO_LOAD_TEXT;
+OnLoadMissionIntro = $STR_CELO_LOAD_TEXT;
+
+author= $STR_CELO_title1;
+OnLoadName = $STR_CELO_MissionName;
+
+showGPS = 0; 
+debriefing = 1; 
+showCompass = 0; 
+showMap = 0; 
+showNotepad = 0; 
+showWatch = 0;
+
+loadScreen = "images\wulfenstein_level1.paa";
+
+doneKeys[] = {"klic_celo_wulfenstein_level1"};
+
+class CfgIdentities
+{
+	class Wulfenstein
+	{
+		name = "Wulfenstein";
+		face = "Face12";
+		glasses = "None";
+		speaker = "Male03CZ";
+		pitch = 0.97;
+	};
+};
+
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "You successfully escaped.";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
