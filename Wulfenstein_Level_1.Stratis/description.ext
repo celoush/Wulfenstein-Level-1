@@ -22,9 +22,9 @@ class CfgIdentities
 	class Wulfenstein
 	{
 		name = "Wulfenstein";
-		face = "Face12";
+		face = "NATOHead_01";
 		glasses = "None";
-		speaker = "Male03CZ";
+		speaker = "Male01ENG";
 		pitch = 0.97;
 	};
 };

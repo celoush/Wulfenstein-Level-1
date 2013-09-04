@@ -1,3 +1,5 @@
+private["_create_doors"];
+
 player setIdentity "Wulfenstein";
 
 removeAllWeapons player;
@@ -22,7 +24,14 @@ player removeItem "ItemCompass";
 player unassignItem "ItemWatch";
 player removeItem "ItemWatch";
 
-player disableCollisionWith secretDoor1;
-player disableCollisionWith secretDoor2;
+_create_doors = {
+	_unit = [ _this, 0, objNull, [objNull] ] call BIS_fnc_param;
+	_unit disableCollisionWith secretDoor1;
+	_unit disableCollisionWith secretDoor2;
+};
+
+addMissionEventHandler ["loaded",{[player] call _create_doors}];
+[player] call _create_doors;
+
 
 ["Enemy base", "Try survive and escape"] call BIS_fnc_infoText;

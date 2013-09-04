@@ -1,0 +1,6 @@
+version 1.01
+- changing AI reaction
+- changing optics
+- added mini grenades to secret rooms backpacks
+- fixed bug with soldiers firstaidkit
+- fixed bug with secret doors after save/load
