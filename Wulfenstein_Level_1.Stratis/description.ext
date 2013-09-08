@@ -37,7 +37,7 @@ class CfgDebriefing
 		title = "Mission Completed";
 		subtitle = "";
 		description = "You successfully escaped.";
-		pictureBackground = "";
+		pictureBackground = "images\wulfenstein_level1.paa";
 		picture = "b_inf";
 		pictureColor[] = {0.0,0.3,0.6,1};
 	};

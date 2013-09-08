@@ -1,3 +1,6 @@
+version 1.03
+- changed ending animation
+- added hint with b&w switcher
 version 1.02
 - fixed bug with secret doors
 - changed environment

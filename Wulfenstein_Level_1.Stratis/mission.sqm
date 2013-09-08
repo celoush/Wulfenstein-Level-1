@@ -57,7 +57,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Wulfenstein - Level 1";
-		overviewText="Made by Celoush 2013 - v1.02";
+		overviewText="Made by Celoush 2013 - v1.03";
 		resistanceWest=0;
 		startFog=0.32999998;
 		startWind=0.22;
@@ -91,7 +91,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={1747.6864,5.5,5523.6357};
+					position[]={1747.5663,5.5,5523.3984};
 					azimut=1083.16;
 					id=0;
 					side="WEST";
@@ -12794,7 +12794,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=8;
+		items=9;
 		class Item0
 		{
 			position[]={1741.9529,5.5,5588.3164};
@@ -12833,9 +12833,8 @@ class Mission
 			rectangular=1;
 			activationBy="WEST";
 			interruptable=1;
-			type="END1";
 			age="UNKNOWN";
-			expActiv="activateKey ""klic_celo_wulfenstein_level1"";";
+			expActiv="activateKey ""klic_celo_wulfenstein_level1""; [""END1"", true] call Bis_fnc_endMission; titleCut ["""",""BLACK OUT"",7]";
 			class Effects
 			{
 			};
@@ -12913,6 +12912,20 @@ class Mission
 			age="UNKNOWN";
 			text="Change mode ";
 			expActiv="_null = celo_color_mode execVM ""sqf\change_mode.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item8
+		{
+			position[]={1739.4803,5.5,5545.1997};
+			a=5;
+			b=5;
+			rectangular=1;
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="hint ""You can turn on/off black&white look by radio 0-0-0"";";
 			class Effects
 			{
 			};
