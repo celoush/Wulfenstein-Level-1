@@ -1,5 +1,3 @@
-private["_create_doors"];
-
 player setIdentity "Wulfenstein";
 
 removeAllWeapons player;
@@ -24,14 +22,18 @@ player removeItem "ItemCompass";
 player unassignItem "ItemWatch";
 player removeItem "ItemWatch";
 
-_create_doors = {
+celo_secret_doors = [secretDoor1,secretDoor2];
+celo_init_secret_doors = {
 	_unit = [ _this, 0, objNull, [objNull] ] call BIS_fnc_param;
-	_unit disableCollisionWith secretDoor1;
-	_unit disableCollisionWith secretDoor2;
+	_doors = [ _this, 1, [], [[]] ] call BIS_fnc_param;
+	{_unit disableCollisionWith _x} foreach _doors;
 };
 
-addMissionEventHandler ["loaded",{[player] call _create_doors}];
-[player] call _create_doors;
+addMissionEventHandler ["loaded",{[player,celo_secret_doors] call celo_init_secret_doors}];
+[player,celo_secret_doors] call celo_init_secret_doors;
 
-
-["Enemy base", "Try survive and escape"] call BIS_fnc_infoText;
+0 spawn {
+	sleep 0.5;
+	_text = format [("<t align = 'center'>Enemy base<br />Try survive and escape")];
+	[parseText _text, [safeZoneX + safeZoneW - 0.35 - 0.025, safeZoneY + safeZoneH - 0.25 - 0.05, 0.35, 0.10], [10, 3]] spawn BIS_fnc_textTiles;
+};

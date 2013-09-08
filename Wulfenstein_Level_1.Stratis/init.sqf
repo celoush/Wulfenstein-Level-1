@@ -1,9 +1,19 @@
-private["_units_sekce1","_units_sekce2","_units_sekce3","_units_sekce4","_null","_wp"];
+private["_units_sekce1","_units_sekce2","_units_sekce3","_units_sekce4","_null","_wp","_units_sekce","_max_add_skill"];
 
-_units_sekce1 = [sekce1_1,sekce1_2,sekce1_3,sekce1_4,sekce1_5,sekce1_6,sekce1_7,sekce1_8,sekce1_9,sekce1_10,sekce1_11,sekce1_12,sekce1_13,sekce1_14,sekce1_15,sekce1_16];
-_units_sekce2 = [sekce2_1,sekce2_2,sekce2_3,sekce2_4,sekce2_5,sekce2_6,sekce2_7,sekce2_8,sekce2_9,sekce2_10,sekce2_11,sekce2_12];
-_units_sekce3 = [sekce3_1,sekce3_2,sekce3_3,sekce3_4,sekce3_5,sekce3_6,sekce3_7,sekce3_8,sekce3_9,sekce3_10,sekce3_11,sekce3_12];
-_units_sekce4 = [sekce4_1,sekce4_2,sekce4_3,sekce4_4,sekce4_5,sekce4_6,sekce4_7,sekce4_8,sekce4_9,sekce4_10,sekce4_11,sekce4_12,sekce4_gunner];
+_units_sekce1 = [];
+_units_sekce2 = [];
+_units_sekce3 = [];
+_units_sekce4 = [];
+
+for "_sekce" from 1 to 4 do {
+	_units_sekce = call compile format ["_units_sekce%1",_sekce];
+	for "_i" from 1 to 17 do {
+		if (!isNil format["sekce%1_%2",_sekce,_i]) then {
+			_units_sekce set [count _units_sekce,call compile format["sekce%1_%2",_sekce,_i]];
+		};
+	};
+};
+_units_sekce4 set [count _units_sekce4,sekce4_gunner];
 
 {_x setUnitPos "UP"} forEach _units_sekce1;
 {_x setUnitPos "MIDDLE"} forEach _units_sekce2;
@@ -16,6 +26,13 @@ _null = 0 execVM "sqf\player.sqf";
 	_x setcombatmode "RED";
 	_x setskill ["general",1];
 	_x setskill ["aimingShake",0.3];
+	_max_add_skill = 0.2;
+	if (_x in _units_sekce2) then {_max_add_skill = 0.3;};
+	if (_x in _units_sekce3) then {_max_add_skill = 0.4;};
+	if (_x in _units_sekce4) then {_max_add_skill = 0.5;};
+	_x setskill ["aimingAccuracy",0.1 + random _max_add_skill];
+	_x setskill ["aimingSpeed",0.2+random 0.4];
+	
 	group _x setBehaviour "COMBAT";
 	if ((_x in (_units_sekce2+_units_sekce3)) and random 1 > 0.8) then {
 		_wp = group _x addwaypoint [[position _x select 0,position _x select 1],0];
@@ -143,7 +160,7 @@ _null = 0 execVM "sqf\player.sqf";
 
 	clearMagazineCargo sekce3_ammo2;
 	clearWeaponCargo sekce3_ammo2;
-	sekce3_ammo2 additemCargo ["V_HarnessO_gry",1];
+	//sekce3_ammo2 additemCargo ["V_HarnessO_gry",1];
 	sekce3_ammo2 addMagazineCargo ["30Rnd_9x21_Mag",3];
 	sekce3_ammo2 addMagazineCargo ["NLAW_F",1];
 
@@ -157,8 +174,9 @@ _null = 0 execVM "sqf\player.sqf";
 
  	titlecut ["","BLACK IN",5];
 
-	"colorCorrections" ppEffectAdjust [1, 1.04, -0.004, [0.5, 0.5, 0.5, 0.0], [0.5, 0.5, 0.5, 0.0],  [0.5, 0.5, 0.5, 0.0]]; 
-	"colorCorrections" ppEffectCommit 0;    
-	"colorCorrections" ppEffectEnable true
+ 	celo_color_mode = "BW";
 
+ 	"colorCorrections" ppEffectAdjust [1, 1.04, -0.004, [0.5, 0.5, 0.5, 0.0], [0.5, 0.5, 0.5, 0.0],  [0.5, 0.5, 0.5, 0.0]]; 
+	"colorCorrections" ppEffectCommit 0;    
+	"colorCorrections" ppEffectEnable true;
 };

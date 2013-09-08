@@ -1,3 +1,9 @@
+version 1.02
+- fixed bug with secret doors
+- changed environment
+- changed AI skills
+- little random to AI spawn
+- turn on/off black&white with radio 0-0-0
 version 1.01
 - changing AI reaction
 - changing optics
