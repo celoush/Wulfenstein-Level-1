@@ -34,6 +34,6 @@ addMissionEventHandler ["loaded",{[player,celo_secret_doors] call celo_init_secr
 
 0 spawn {
 	sleep 0.5;
-	_text = format [("<t align = 'center'>Enemy base<br />Try survive and escape")];
+	_text = format [("<t align = 'center'>"+(localize "STR_CELO_enemybase")+"<br />"+(localize "STR_CELO_LOAD_TEXT"))];
 	[parseText _text, [safeZoneX + safeZoneW - 0.35 - 0.025, safeZoneY + safeZoneH - 0.25 - 0.05, 0.35, 0.10], [10, 3]] spawn BIS_fnc_textTiles;
 };

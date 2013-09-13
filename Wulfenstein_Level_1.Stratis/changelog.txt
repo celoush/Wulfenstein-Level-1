@@ -1,3 +1,7 @@
+version 1.05
+- fixed localization
+version 1.04
+- removed bad ammoboxes
 version 1.03
 - changed ending animation
 - added hint with b&w switcher

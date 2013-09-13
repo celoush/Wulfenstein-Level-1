@@ -1,9 +1,13 @@
 ﻿LANGUAGE,"English","Czech"
-STR_CELO_LOAD_TEXT,"Prepare for escape","Pokus se uniknout"
+STR_CELO_LOAD_TEXT,"Find your way out","Najdi si svou cestu ven"
 STR_CELO_MissionName,"Wulfenstein - Level 1","Wulfenstein - Level 1"
 STR_CELO_DiaryName,"Wulfenstein","Wulfenstein"
 STR_CELO_DiaryDescription,"It´s time","Je čas."
+STR_CELO_hitbwmode,"You can turn on/off black&white look by radio 0-0-0","Pomoci radiového zavolání 0-0-0 můžete zapínat/vypínat černobílý vzhled"
+STR_CELO_enemybase,"Enemy base","Nepřátelská základna"
 STR_CELO_title1,"Celoush","Celoush",
 STR_CELO_title2,"present","uvádí",
 STR_CELO_title3,"Wulfenstein","Wulfenstein"
 STR_CELO_title4,"The End","Konec",
+STR_CELO_DEBR_title,"Mission Completed","Mise splněna"
+STR_CELO_DEBR_description,"You successfully escaped.","Podařilo se ti uniknout"

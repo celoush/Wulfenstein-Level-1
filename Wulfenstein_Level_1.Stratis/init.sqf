@@ -1,4 +1,4 @@
-private["_units_sekce1","_units_sekce2","_units_sekce3","_units_sekce4","_null","_wp","_units_sekce","_max_add_skill"];
+["_units_sekce1","_units_sekce2","_units_sekce3","_units_sekce4","_null","_wp","_units_sekce","_max_add_skill"];
 
 _units_sekce1 = [];
 _units_sekce2 = [];
@@ -174,7 +174,7 @@ _null = 0 execVM "sqf\player.sqf";
 
  	titlecut ["","BLACK IN",5];
 
- 	celo_color_mode = "BW";
+ 	celo_color_mode = "BW"; 	
 
  	"colorCorrections" ppEffectAdjust [1, 1.04, -0.004, [0.5, 0.5, 0.5, 0.0], [0.5, 0.5, 0.5, 0.0],  [0.5, 0.5, 0.5, 0.0]]; 
 	"colorCorrections" ppEffectCommit 0;    

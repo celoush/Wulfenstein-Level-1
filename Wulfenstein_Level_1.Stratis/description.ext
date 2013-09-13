@@ -34,9 +34,9 @@ class CfgDebriefing
 {  
 	class End1
 	{
-		title = "Mission Completed";
+		title = $STR_CELO_DEBR_title;
 		subtitle = "";
-		description = "You successfully escaped.";
+		description = $STR_CELO_DEBR_description;
 		pictureBackground = "images\wulfenstein_level1.paa";
 		picture = "b_inf";
 		pictureColor[] = {0.0,0.3,0.6,1};
